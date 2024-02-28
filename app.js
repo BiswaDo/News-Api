@@ -17,8 +17,7 @@ const forbiddenWords = ['window.','Search:','https:','home', 'about', 'contact',
 
 app.get("/", function(req,res){
     const articles = [];
-
-    var topic = "Infosys";
+    const topic = req.query.topic;
     console.log(topic);
 
     axios.get("https://www.hindustantimes.com/topic/"+ topic + "/news")
