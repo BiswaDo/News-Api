@@ -3,22 +3,22 @@ const PORT = process.env.PORT || 3000;
 const express = require("express");
 const cheerio = require("cheerio");
 const axios = require("axios");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 const app = express();
-app.use(bodyParser.urlencoded({extended:true}));
+// app.use(bodyParser.urlencoded({extended:true}));
 
-app.get("/", function(req,res){
-    res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", function(req,res){
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 
 const forbiddenWords = ['window.','Search:','https:','home', 'about', 'contact', 'pm modi','[pm modi news]','pm modi news','Latest from pm modi','error','Error'];
 
-app.post("/news", function(req,res){
+app.get("/news", function(req,res){
     const articles = [];
 
-    var topic = req.body.topic;
+    var topic = Infosys;
     console.log(topic);
 
     axios.get("https://www.hindustantimes.com/topic/"+ topic + "/news")
