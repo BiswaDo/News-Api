@@ -12,11 +12,11 @@ app.get("/", function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
 
-const articles = [];
 
 const forbiddenWords = ['window.','Search:','https:','home', 'about', 'contact', 'pm modi','[pm modi news]','pm modi news','Latest from pm modi','error','Error'];
 
 app.post("/news", function(req,res){
+    const articles = [];
 
     var topic = req.body.topic;
     console.log(topic);
