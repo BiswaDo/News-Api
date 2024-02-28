@@ -15,7 +15,7 @@ const app = express();
 
 const forbiddenWords = ['window.','Search:','https:','home', 'about', 'contact', 'pm modi','[pm modi news]','pm modi news','Latest from pm modi','error','Error'];
 
-app.get("/news", function(req,res){
+app.get("/", function(req,res){
     const articles = [];
 
     var topic = "Infosys";
